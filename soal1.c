@@ -30,7 +30,7 @@ void print_kurung_semua(int pos, int n, int buka, int tutup) {
     // kondisi ketika jumlah pasangan yang diinginkan tercapai
     if (tutup == n) {
         // output dari susunan pasangan tanda kurung
-        printf("%s \n", str);
+        printf("%s\n", str);
         return;
     }
     // kondisi ketika membuat string deretan tanda kurung sesuai leksikografis (perbaikan #2: mengubah urutan if else)
@@ -70,7 +70,7 @@ int main() {
 
     // pemanggilan fungsi rekursi
     print_kurung(n);
-    printf("TOTAL %d", eq);
+    printf("TOTAL %d\n", eq);
 
 
     return 0;
