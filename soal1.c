@@ -14,17 +14,17 @@
 #define MAX 100
 
 // prosedur rekursi agar terjadi looping
-void print_kurung_semua(int pos, int n, int buka, int tutup, int eq);
+void print_kurung_semua(int pos, int n, int buka, int tutup);
 
 // kondisi awal verifikasi ketika nilai yang diinginkan lebih dari 0
-void print_kurung(int n, int eq) {
+void print_kurung(int n) {
     if (n > 0) {
-        print_kurung_semua(0, n, 0, 0, eq);
+        print_kurung_semua(0, n, 0, 0);
     }
     return;
 }
 
-void print_kurung_semua(int pos, int n, int buka, int tutup, int eq) {
+void print_kurung_semua(int pos, int n, int buka, int tutup) {
     static char str[MAX];
 
     // kondisi ketika jumlah pasangan yang diinginkan tercapai
@@ -37,17 +37,17 @@ void print_kurung_semua(int pos, int n, int buka, int tutup, int eq) {
     else {
         if (buka < n) {
             str[pos] = '(';
-            print_kurung_semua(pos + 1, n, buka + 1, tutup, eq);
+            print_kurung_semua(pos + 1, n, buka + 1, tutup);
         }
 
         if (buka > tutup) {
             str[pos] = ')';
-            print_kurung_semua(pos + 1, n, buka, tutup + 1, eq);
+            print_kurung_semua(pos + 1, n, buka, tutup + 1);
         }
     }
 }
 
-unsigned int faktorial(unsigned int N) {
+unsigned int faktorial(int N) {
     int fact = 1, i;
 
     // loop dari 1 hingga N dalam memperoleh nilai faktorial
@@ -69,7 +69,7 @@ int main() {
     int eq = faktorial(2*n)/(faktorial(n+1)*faktorial(n));
 
     // pemanggilan fungsi rekursi
-    print_kurung(n, eq);
+    print_kurung(n);
     printf("TOTAL %d\n", eq);
 
 
