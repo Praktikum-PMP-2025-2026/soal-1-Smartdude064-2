@@ -70,7 +70,7 @@ int main() {
 
     // pemanggilan fungsi rekursi
     print_kurung(n);
-    printf("TOTAL %d\n", eq);
+    printf("TOTAL %d", eq);
 
 
     return 0;
